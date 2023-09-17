@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import Slide from '../components/Slide'
 import Animated, { useAnimatedScrollHandler, interpolateColor, useSharedValue, useAnimatedStyle } from 'react-native-reanimated'
 import data from '../helpers/data'
+import Button from '../components/Button'
 
 
 const {width, height} = Dimensions.get("window")
@@ -20,7 +21,8 @@ const styles = StyleSheet.create({
 
   captions: {
       flex: 1,
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
+      width: width * data.length,
   },
 
   underlay: {
@@ -31,7 +33,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     borderTopLeftRadius: 75,
-    width: width * data.length,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
@@ -40,7 +41,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 22,
     fontWeight: '700',
-    marginBottom: 12
+    marginBottom: 12,
+    color: '#0c0d34'
 
   },
   subTitle: {
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
     fontSize: 16, 
     fontWeight: '500',
     lineHeight: 25,
+    marginBottom: 25
   }
 
 })
@@ -55,6 +58,7 @@ const styles = StyleSheet.create({
 const Onboarding = () => {
   const x = useSharedValue(0)
   const translateX = useSharedValue(0)
+  const scrollRef = useRef(null)
 
   const onScroll = useAnimatedScrollHandler({
     onScroll: (event) => {
@@ -89,6 +93,7 @@ const Onboarding = () => {
         showsHorizontalScrollIndicator={false}
         decelerationRate='fast'
         onScroll={onScroll}
+        ref={scrollRef}
         scrollEventThrottle={1}
       >
           {data.map((item, index) => (
@@ -97,13 +102,22 @@ const Onboarding = () => {
       </Animated.ScrollView>
 
       <View style={styles.captions}>
-          <Animated.View style={[styles.underlay, {...StyleSheet.absoluteFillObject,}, backgroundColor]}></Animated.View>
+          <Animated.View style={[styles.underlay, {...StyleSheet.absoluteFillObject,}, backgroundColor]}/>
           <Animated.View style={[styles.overlay, transform]}>
               {data.map((item, index) => (
-                  <View key={index} style={[{width, padding: 40}]}>
+                  <Animated.View key={index} style={[{width, padding: 40}]}>
                       <Text style={styles.title}>{item.title}</Text>
                       <Text style={styles.subTitle}>{item.subTitle}</Text>
-                  </View>
+                      <Button 
+                          index={index} 
+                          onPress={() => {
+                              if(scrollRef.current){
+                                  scrollRef.current
+                                  .scrollTo({x: width * (index + 1)})
+                              }
+                          }}
+                      />
+                  </Animated.View>
               ))}
           </Animated.View>
       </View>

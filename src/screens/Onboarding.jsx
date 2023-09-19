@@ -1,7 +1,7 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 import React, { useRef } from 'react'
 import Slide from '../components/Slide'
-import Animated, { useAnimatedScrollHandler, interpolateColor,interpolate, useSharedValue, useAnimatedStyle } from 'react-native-reanimated'
+import Animated, { useAnimatedScrollHandler, interpolateColor,interpolate, useSharedValue, useAnimatedStyle, Extrapolate } from 'react-native-reanimated'
 import data from '../helpers/data'
 import SubText from '../components/SubText'
 import NavDots from '../components/NavDot'
@@ -10,13 +10,12 @@ const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
   container: {
       flex: 1,
-      backgroundColor: '#fff',
-      borderBottomLeftRadius: 75
+      borderBottomLeftRadius: 75,
+      backgroundColor: '#fff'
   },
   slider: {
-      height: 0.31 * height,
-      backgroundColor: 'cyan',
-      borderBottomRightRadius: 75
+      height: 0.30 * height,
+      borderBottomRightRadius: 75,
   },
 
   captions: {
@@ -46,6 +45,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
     flexDirection: 'row'
+  },
+
+  imagesContainer: {
+    ...StyleSheet.absoluteFillObject,
+    top: 0,
+    borderBottomRightRadius: 75,
+    height: height * 0.66,
+    overflow: 'hidden'
+  },
+  imageContainer: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
+  },
+
+  image: {
+    width: width - 75,
+    borderBottomRightRadius: 75
   }
 })
 
@@ -96,11 +113,39 @@ const animatedScale = (index) =>  useAnimatedStyle(() => ({
          )    
     }]
 }))
+
   
   return (
-    <View style={[styles.container, {flex: 1}]}>
+    <View style={[styles.container]}>
+        <Animated.View style={[styles.imagesContainer, backgroundColor]}>
+            {data.map((item, index) => {
+                const imageOpacity = useAnimatedStyle(() => ({
+                  opacity: interpolate(
+                    x.value,
+                    [(index -1) * width, (index) * width, (index + 1) * width],
+                    [0, 1, 0],
+                    {extrapolateRight: Extrapolate.EXTEND, extrapolateLeft: Extrapolate.EXTEND}
+                  )
+                }))
+                return (
+                    <Animated.View  key={index} style={[styles.imageContainer, imageOpacity]}>
+                      <Image
+                          source={item.src}
+                          style={[styles.image, {
+                            height: ((width - 75 ) * item.height) / item.width,
+                            transform: [
+                              {translateY: item.height > 1058 ? 800: item.height > 1000 ? 600 : item.height > 900? -5 : item.height > 800 ? 200 : 0},
+                              {translateX: item.right ? -35 : 0}
+                            ]
+                          }]}
+                      />
+                    </Animated.View>
+                    )
+                  })}
+        </Animated.View>
+
       <Animated.ScrollView 
-        style={[styles.slider, backgroundColor]}
+        style={[styles.slider]}
         horizontal
         snapToInterval={width}
         bounces={false}
@@ -110,9 +155,9 @@ const animatedScale = (index) =>  useAnimatedStyle(() => ({
         ref={scrollRef}
         scrollEventThrottle={1}
       >
-          {data.map((item, index) => (
-            <Slide key={index} label={item.label} right={item.right} />
-          ))}
+            {data.map((item, index) => (
+                <Slide key={index} label={item.label} right={item.right} />
+            ))}
       </Animated.ScrollView>
 
       <View style={styles.captions}>

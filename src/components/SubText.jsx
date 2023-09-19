@@ -4,7 +4,7 @@ import Button from './Button'
 
 
 const {width, height} = Dimensions.get('window')
-const SubText = ({item, index, scrollRef}) => {
+const SubText = ({item, index, scrollRef, navigation}) => {
   return (
      <View key={index} style={[styles.container]}>
           <Text style={styles.title}>{item.title}</Text>
@@ -12,7 +12,9 @@ const SubText = ({item, index, scrollRef}) => {
           <Button 
                index={index} 
                onPress={() => {
-                    if(scrollRef.current){
+                    if (index === 3){
+                         navigation.navigate('Welcome')
+                    }else if (scrollRef.current){
                          scrollRef.current
                          .scrollTo({x: width * (index + 1)})
                     }

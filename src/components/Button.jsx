@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
           borderRadius: 50,
           alignItems: 'center',
           justifyContent: 'center',
-          paddingVertical: 15
+          paddingVertical: 15,
      },
      label: {
           fontSize: 18

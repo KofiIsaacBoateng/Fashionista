@@ -13,8 +13,9 @@ const styles = StyleSheet.create({
       borderBottomLeftRadius: 75,
       backgroundColor: '#fff'
   },
+  
   slider: {
-      height: 0.30 * height,
+      height: 0.31 * height,
       borderBottomRightRadius: 75,
   },
 
@@ -49,15 +50,16 @@ const styles = StyleSheet.create({
 
   imagesContainer: {
     ...StyleSheet.absoluteFillObject,
-    top: 0,
     borderBottomRightRadius: 75,
     height: height * 0.66,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    width,
   },
   imageContainer: {
     ...StyleSheet.absoluteFillObject,
     justifyContent: 'flex-end',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    borderBottomRightRadius: 75
   },
 
   image: {
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const Onboarding = () => {
+const Onboarding = ({navigation}) => {
   const x = useSharedValue(0)
   const translateX = useSharedValue(0)
   const scale = useSharedValue(0)
@@ -180,6 +182,7 @@ const animatedScale = (index) =>  useAnimatedStyle(() => ({
                       item={item}
                       index={index} 
                       scrollRef={scrollRef}
+                      navigation={navigation}
                   />
                         ))}
           </Animated.View>

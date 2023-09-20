@@ -20,3 +20,14 @@
   - [x] Add image to top portion
   - [x] Add welcome text to bottom section
   - [x] Add buttons to navigate to login, sign up, and forgot password screens
+
+  ##### Login Screen
+  - [ ] Add patterns to top and bottom
+  - [ ] Add an underlay for each pattern
+  - [ ] Add an overlay
+  - [ ] Apply border-radius to make cool pattern
+  - [ ] Add heading
+  - [ ] Add input boxes for email and password
+  - [ ] Add forgot password and sign up links
+  - [ ] Add other sign in options to the screen's footer
+  - [ ] Add login, forgot password, and sign up click events to navigate to their respective screens

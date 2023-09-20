@@ -14,3 +14,9 @@
   - [x] Animate bottom slide to translateX on scroll
   - [x] Add scroll functionality to bottom slide next button
   - [x] Finally add pagination indicators
+
+  ##### Welcome Screen
+  - [x] Initiate base design similar to landing page's slide
+  - [x] Add image to top portion
+  - [x] Add welcome text to bottom section
+  - [x] Add buttons to navigate to login, sign up, and forgot password screens

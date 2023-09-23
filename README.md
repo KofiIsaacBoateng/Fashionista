@@ -42,5 +42,3 @@
   - [ ] Add forgot password and sign up links
   - [ ] Add other sign in options to the screen's footer
   - [ ] Add login, forgot password, and sign up click events to navigate to their respective screens
-
-##### Refactor Authentication Screens With Reusable Components

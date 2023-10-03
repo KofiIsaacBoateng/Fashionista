@@ -1,6 +1,5 @@
 import { Dimensions, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Button } from '../components/Button'
 
 const {width, height} = Dimensions.get('window')
 

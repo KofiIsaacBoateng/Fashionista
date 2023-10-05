@@ -18,8 +18,8 @@
   ##### Welcome Screen
   - [x] Initiate base design similar to landing page's slide
   - [x] Add image to top portion
-  - [ ] Add welcome text to bottom section
-  - [ ] Add buttons to navigate to login, sign up, and forgot password screens
+  - [x] Add welcome text to bottom section
+  - [x] Add buttons to navigate to login, sign up, and forgot password screens
 
   ##### Login Screen
   - [x] Add patterns to top and bottom

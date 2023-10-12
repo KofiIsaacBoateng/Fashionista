@@ -36,7 +36,7 @@
   - [x] Add patterns to top and bottom
   - [x] Add an underlay for each pattern
   - [x] Add an overlay
-  - [ ] Apply rounded corners
+  - [x] Apply rounded corners
   - [ ] Add heading
   - [ ] Add input boxes for email and password
   - [ ] Add forgot password and sign up links

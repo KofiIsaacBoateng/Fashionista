@@ -30,11 +30,11 @@
   - [ ] Add input boxes for email and password
   - [ ] Add forgot password and sign up links
   - [ ] Add other sign in options to the screen's footer
-  - [x] Add login, forgot password, and sign up click events to navigate to their respective screens
+  - [ ] Add login, forgot password, and sign up click events to navigate to their respective screens
 
 ##### Signup Screen
-  - [x] Add patterns to top and bottom
-  - [x] Add an underlay for each pattern
+  - [ ] Add patterns to top and bottom
+  - [ ] Add an underlay for each pattern
   - [x] Add an overlay
   - [x] Apply rounded corners
   - [x] Add heading

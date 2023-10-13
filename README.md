@@ -12,8 +12,8 @@
   - [x] Add images to top slide
   - [x] Animate top slide to fade in background colors and images
   - [x] Animate bottom slide to translateX on scroll
-  - [x] Add scroll functionality to bottom slide next button
-  - [x] Finally add pagination indicators
+  - [ ] Add scroll functionality to bottom slide next button
+  - [ ] Finally add pagination indicators
 
   ##### Welcome Screen
   - [ ] Initiate base design similar to landing page's slide

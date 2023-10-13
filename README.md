@@ -10,8 +10,8 @@
   - [x] Add label to top slide
   - [x] Add texts and next buttons to bottom slides
   - [x] Add images to top slide
-  - [x] Animate top slide to fade in background colors and images
-  - [x] Animate bottom slide to translateX on scroll
+  - [ ] Animate top slide to fade in background colors and images
+  - [ ] Animate bottom slide to translateX on scroll
   - [ ] Add scroll functionality to bottom slide next button
   - [ ] Finally add pagination indicators
 

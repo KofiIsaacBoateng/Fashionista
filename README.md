@@ -26,10 +26,10 @@
   - [ ] Add an underlay for each pattern
   - [ ] Add an overlay
   - [ ] Apply rounded corners
-  - [x] Add heading
-  - [x] Add input boxes for email and password
-  - [x] Add forgot password and sign up links
-  - [x] Add other sign in options to the screen's footer
+  - [ ] Add heading
+  - [ ] Add input boxes for email and password
+  - [ ] Add forgot password and sign up links
+  - [ ] Add other sign in options to the screen's footer
   - [x] Add login, forgot password, and sign up click events to navigate to their respective screens
 
 ##### Signup Screen

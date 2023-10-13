@@ -22,10 +22,10 @@
   - [ ] Add buttons to navigate to login, sign up, and forgot password screens
 
   ##### Login Screen
-  - [x] Add patterns to top and bottom
-  - [x] Add an underlay for each pattern
-  - [x] Add an overlay
-  - [x] Apply rounded corners
+  - [ ] Add patterns to top and bottom
+  - [ ] Add an underlay for each pattern
+  - [ ] Add an overlay
+  - [ ] Apply rounded corners
   - [x] Add heading
   - [x] Add input boxes for email and password
   - [x] Add forgot password and sign up links

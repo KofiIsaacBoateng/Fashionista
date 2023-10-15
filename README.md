@@ -19,12 +19,12 @@
   - [x] Initiate base design similar to landing page's slide
   - [x] Add image to top portion
   - [x] Add welcome text to bottom section
-  - [ ] Add buttons to navigate to login, sign up, and forgot password screens
+  - [x] Add buttons to navigate to login, sign up, and forgot password screens
 
   ##### Login Screen
-  - [ ] Add patterns to top and bottom
-  - [ ] Add an underlay for each pattern
-  - [ ] Add an overlay
+  - [x] Add patterns to top and bottom
+  - [x] Add an underlay for each pattern
+  - [x] Add an overlay
   - [ ] Apply rounded corners
   - [ ] Add heading
   - [ ] Add input boxes for email and password

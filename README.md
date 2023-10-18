@@ -16,7 +16,7 @@
   - [x] Finally add pagination indicators
 
   ##### Welcome Screen
-  - [x] Initiate base design similar to landing page's slide
+  - [ ] Initiate base design similar to landing page's slide
   - [ ] Add image to top portion
   - [ ] Add welcome text to bottom section
   - [ ] Add buttons to navigate to login, sign up, and forgot password screens

@@ -33,9 +33,9 @@
   - [x] Add login, forgot password, and sign up click events to navigate to their respective screens
 
 ##### Signup Screen
-  - [x] Add patterns to top and bottom
-  - [x] Add an underlay for each pattern
-  - [x] Add an overlay
+  - [ ] Add patterns to top and bottom
+  - [ ] Add an underlay for each pattern
+  - [ ] Add an overlay
   - [ ] Apply rounded corners
   - [ ] Add heading
   - [ ] Add input boxes for email and password

@@ -92,7 +92,7 @@ const Onboarding = ({navigation}) => {
     return {
       backgroundColor: interpolateColor(x.value,
         [0, width, width * 2, width * 3],
-        ['#bfeaf5', '#beecc4', '#ffe4d9', '#ffdddd']
+        ['lightgray', '#91b6c8', '#f56fc6', '#afd7d4']
       )
     }
   }

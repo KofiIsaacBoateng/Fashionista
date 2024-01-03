@@ -3,6 +3,7 @@ const two = require('../../assets/2.png')
 const three = require('../../assets/3.png')
 const four = require('../../assets/4.png')
 const six = require('../../assets/6.png')
+const seven = require('../../assets/7.png')
 
 export default [
      {
@@ -10,7 +11,7 @@ export default [
           right: false,
           title: 'Find Your Outfits.',
           subTitle: 'Confused about your outfit? Don\'t worry! Find the best outfit here!',
-          src: one,
+          src: seven,
           width: 263,
           height: 1062
      },

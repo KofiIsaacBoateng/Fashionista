@@ -136,7 +136,7 @@ const animatedScale = (index) =>  useAnimatedStyle(() => ({
                           style={[styles.image, {
                             height: ((width - 75 ) * item.height) / item.width,
                             transform: [
-                              {translateY: item.height > 1058 ? 800: item.height > 1000 ? 600 : item.height > 900? -5 : item.height > 800 ? 200 : 0},
+                              {translateY: item.height > 1058 ? 900: item.height > 1000 ? 700 : item.height > 900? 50 : item.height > 800 ? 280 : 200},
                               {translateX: item.right ? -35 : 0}
                             ]
                           }]}

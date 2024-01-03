@@ -16,8 +16,8 @@ export default NavDots
 
 const styles = StyleSheet.create({
      navDots: {
-          width: 10,
-          height: 10,
+          width: 7,
+          height: 7,
           backgroundColor: '#2cb9b0',
           borderRadius: 100,
           marginHorizontal: 5

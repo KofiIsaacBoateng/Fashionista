@@ -10,3 +10,7 @@ export default function App() {
       </NavigationContainer>
   );
 }
+
+const fun = (name) => {
+  return name === name
+}

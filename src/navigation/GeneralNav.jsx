@@ -17,7 +17,7 @@ export default function Main() {
                     header: () => null
                })}
           >
-               <NativeStack.Screen 
+               <NativeStack.Screen
                     name='Onboarding' 
                     component={Onboarding} 
                />

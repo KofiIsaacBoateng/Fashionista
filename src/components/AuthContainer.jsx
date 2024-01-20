@@ -2,6 +2,7 @@ import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FooterSocialLogins from './Footer'
+import { useNavigation } from '@react-navigation/native'
 
 const {width, height} = Dimensions.get('window')
 const styles = StyleSheet.create({
@@ -21,9 +22,10 @@ const styles = StyleSheet.create({
   },
   
   underlayImage: {
-    transform: [
-      {"rotate": "180deg"}
-    ]
+    // transform: [
+    //   {"rotate": "360deg"},
+    //   // {translateY: 10}
+    // ]
   }, 
 
   content: {
@@ -33,9 +35,9 @@ const styles = StyleSheet.create({
   overlay: {
     backgroundColor: "#fff",
     height: "100%",
-    borderTopLeftRadius: 95,
-    borderBottomLeftRadius: 95,
-    borderBottomRightRadius: 95
+    borderTopLeftRadius: 75,
+    borderBottomLeftRadius: 75,
+    borderBottomRightRadius: 75
   },
 })
 
@@ -45,6 +47,8 @@ const AuthContainer = ({children}) => {
     require("../../assets/auth/pattern-02.jpg"),
     require("../../assets/auth/pattern-03.jpg")
   ]
+  const navigation = useNavigation()
+
   return (
       <SafeAreaView style={[{flex: 1, backgroundColor: "#fff"}]}>
           <View style={[styles.header, {flex: 0.15}]}>
@@ -67,7 +71,10 @@ const AuthContainer = ({children}) => {
           <View style={{flex: 0.2}}>
             <View style={[styles.underlay, {backgroundColor: "#0c0d34"}]} />
             <FooterSocialLogins />
-            <TouchableOpacity style={{justifyContent: "center", flexDirection: "row", gap: 10}}>
+            <TouchableOpacity
+              style={{justifyContent: "center", flexDirection: "row", gap: 10}}
+              onPress={() => navigation.navigate("Register")}
+            >
               <Text style={{color: "#fff"}}>Already have an account ?</Text>
               <Text style={{color: "darkgreen"}}>Sign Up.</Text>
             </TouchableOpacity>

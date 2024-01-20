@@ -1,9 +1,11 @@
 import { Dimensions, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 const {width, height} = Dimensions.get('window')
 
 const Welcome = () => {
+     const navigation = useNavigation()
   return (
     <View style={[styles.container]}>
           <View style={[styles.main]}>
@@ -23,7 +25,9 @@ const Welcome = () => {
                <View style={styles.front}>
                     <Text style={styles.title}>Let's get started</Text>
                     <Text style={styles.subTitle}>Login to your account below or signup for an amazing experience</Text>
-                    <TouchableOpacity >
+                    <TouchableOpacity 
+                         onPress={() => navigation.navigate('Login')}
+                    >
                          <View style={[
                               styles.button, 
                               {backgroundColor: '#2cb9b0'}
@@ -34,7 +38,9 @@ const Welcome = () => {
                          </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity >
+                    <TouchableOpacity
+                         onPress={() => navigation.navigate('Register')}
+                    >
                          <View style={[
                               styles.button, 
                               {backgroundColor: '#aaa3'}
@@ -45,7 +51,9 @@ const Welcome = () => {
                          </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity >
+                    <TouchableOpacity 
+                         onPress={() => navigation.navigate('ForgotPassword')}
+                    >
                          <View style={[
                               styles.button, 
                          ]}>

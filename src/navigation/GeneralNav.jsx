@@ -5,6 +5,7 @@ import Onboarding from '../screens/Onboarding'
 import Register from '../screens/Register'
 import Login from '../screens/Login'
 import Welcome from '../screens/Welcome'
+import ForgotPassword from '../screens/ForgotPassword'
 
 export default function Main() {
      const NativeStack = createNativeStackNavigator()
@@ -33,6 +34,10 @@ export default function Main() {
                <NativeStack.Screen 
                     name='Login' 
                     component={Login} 
+               />
+               <NativeStack.Screen 
+                    name='ForgotPassword'
+                    component={ForgotPassword}
                />
           </NativeStack.Navigator>
     )

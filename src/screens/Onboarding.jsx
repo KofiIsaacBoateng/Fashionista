@@ -90,7 +90,8 @@ const Onboarding = ({navigation}) => {
 
   const backgroundColor = useAnimatedStyle(() => {
     return {
-      backgroundColor: interpolateColor(x.value,
+      backgroundColor: interpolateColor(
+        x.value,
         [0, width, width * 2, width * 3],
         ['lightgray', '#91b6c8', '#f56fc6', '#afd7d4']
       )
@@ -126,7 +127,7 @@ const animatedScale = (index) =>  useAnimatedStyle(() => ({
                     x.value,
                     [(index -1) * width, (index) * width, (index + 1) * width],
                     [0, 1, 0],
-                    {extrapolateRight: Extrapolate.EXTEND, extrapolateLeft: Extrapolate.EXTEND}
+                    // {extrapolateRight: Extrapolate.EXTEND, extrapolateLeft: Extrapolate.EXTEND}
                   )
                 }))
                 return (

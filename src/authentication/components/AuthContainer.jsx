@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
 
 const AuthContainer = ({children}) => {
   const patterns = [
-    require("../../assets/auth/pattern-01.jpg"),
-    require("../../assets/auth/pattern-02.jpg"),
-    require("../../assets/auth/pattern-03.jpg")
+    require("../../../assets/auth/pattern-01.jpg"),
+    require("../../../assets/auth/pattern-02.jpg"),
+    require("../../../assets/auth/pattern-03.jpg")
   ]
   const navigation = useNavigation()
 

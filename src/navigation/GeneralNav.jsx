@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Onboarding from '../screens/Onboarding'
-import Register from '../screens/Register'
-import Login from '../screens/Login'
-import Welcome from '../screens/Welcome'
-import ForgotPassword from '../screens/ForgotPassword'
+import Onboarding from '../authentication/screens/Onboarding'
+import Register from '../authentication/screens/Register'
+import Login from '../authentication/screens/Login'
+import Welcome from '../authentication/screens/Welcome'
+import ForgotPassword from '../authentication/screens/ForgotPassword'
 
 export default function Main() {
      const NativeStack = createNativeStackNavigator()

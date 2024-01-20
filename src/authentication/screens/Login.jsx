@@ -3,7 +3,7 @@ import React from 'react'
 import AuthContainer from '../components/AuthContainer'
 import { CustomTextInput, CheckBox } from '../components/CustomInputs'
 
-const {width, height} = Dimensions.get("window")
+const {width} = Dimensions.get("window")
 const styles = StyleSheet.create({
   heading: {
     fontSize: 25,

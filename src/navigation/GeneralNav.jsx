@@ -12,7 +12,7 @@ export default function Main() {
      
      return (
           <NativeStack.Navigator
-               initialRouteName='Onboarding'
+               initialRouteName='Login'
                screenOptions={() => ({
                     header: () => null
                })}

@@ -1,16 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import {NavigationContainer} from '@react-navigation/native'
 import MainNavigation from './src/navigation/GeneralNav'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-      <NavigationContainer>
-          <StatusBar style='dark' />
-          <MainNavigation />
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+            <StatusBar style='light' backgroundColor='#0c0d34' />
+            <MainNavigation />
+        </NavigationContainer>
+      </SafeAreaProvider>
   );
-}
-
-const fun = (name) => {
-  return name === name
 }

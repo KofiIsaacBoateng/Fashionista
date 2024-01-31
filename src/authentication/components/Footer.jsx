@@ -73,21 +73,21 @@ const FooterSocialLogins = () => {
     <View style={styles.socialLogins}>
         <View style={styles.socialIcon}>
             <Image 
-                source={require("../../assets/auth/google-search.png")}
+                source={require("../../../assets/auth/google-search.png")}
                 style={{width: 25, height: 25}}
             />
         </View>
 
         <View style={styles.socialIcon}>
             <Image 
-                source={require("../../assets/auth/facebook.png")}
+                source={require("../../../assets/auth/facebook.png")}
                 style={{width: 25, height: 25}}
             />
         </View>
 
         <View style={styles.socialIcon}>
             <Image 
-                source={require("../../assets/auth/apple.png")}
+                source={require("../../../assets/auth/apple.png")}
                 style={{width: 25, height: 25}}
             />
         </View>

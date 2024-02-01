@@ -32,6 +32,13 @@
   - [x] Add other sign in options to the screen's footer
   - [x] Add login, forgot password, and sign up click events to navigate to their respective screens
 
+  ##### Forgot Password Screen
+  - [x] Content with email input
+  - [x] Email validation
+  - [x] Send Functionality
+  - [x] Success confirmation modal
+  - [x] Error confirmation modal
+
 ##### Signup Screen
   - [x] Add patterns to top and bottom
   - [x] Add an underlay for each pattern

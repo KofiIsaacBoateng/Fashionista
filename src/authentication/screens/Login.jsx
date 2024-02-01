@@ -5,6 +5,7 @@ import { CustomTextInput, CheckBox } from '../components/CustomInputs'
 import { AuthRedirectButton } from '../components/Button'
 import { useFormik } from 'formik'
 import { loginValidationSchema } from '../helpers/authSchemas'
+import { StatusBar } from 'expo-status-bar'
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -57,13 +58,14 @@ const Login = ({navigation}) => {
       persist: false
     },
 
-    onSubmit: () => navigation.navigate("Register"),
+    onSubmit: () => navigation.navigate("Home"),
     validationSchema: loginValidationSchema
   })
   return (
     <AuthContainer
       {...{authRedirectionFooter}}
     >
+          <StatusBar backgroundColor='#0c0d34' style="light" />
           <Text style={styles.heading}>Welcome Back!</Text>
           <Text style={styles.intro}>Use your credentials below and login to your account.</Text>
           <CustomTextInput
@@ -101,7 +103,10 @@ const Login = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.callToAction}>
+          <TouchableOpacity 
+            style={styles.callToAction}
+            onPress={formik.handleSubmit}
+          >
             <Text style={{color: "#fff", fontWeight: 700, fontSize: 16, textAlign: "center"}}>Login to your account</Text>
           </TouchableOpacity>
     </AuthContainer>

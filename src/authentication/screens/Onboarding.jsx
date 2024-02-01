@@ -5,6 +5,7 @@ import Animated, { useAnimatedScrollHandler, interpolateColor,interpolate, useSh
 import data from '../helpers/data'
 import SubText from '../components/SubText'
 import NavDots from '../components/NavDot'
+import { StatusBar } from 'expo-status-bar'
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -120,6 +121,7 @@ const animatedScale = (index) =>  useAnimatedStyle(() => ({
   
   return (
     <View style={[styles.container]}>
+        <StatusBar style={backgroundColor} />
         <Animated.View style={[styles.imagesContainer, backgroundColor]}>
             {data.map((item, index) => {
                 const imageOpacity = useAnimatedStyle(() => ({

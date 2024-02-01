@@ -59,7 +59,7 @@ const Register = ({navigation}) => {
       persist: false
     },
 
-    onSubmit: () => navigation.navigate("Register"),
+    onSubmit: () => navigation.navigate("Home"),
     validationSchema: registerValidationSchema
   })
   return (
@@ -111,7 +111,10 @@ const Register = ({navigation}) => {
             />
           </View>
 
-          <TouchableOpacity style={styles.callToAction}>
+          <TouchableOpacity 
+            style={styles.callToAction}
+            onPress={formik.handleSubmit}
+          >
             <Text style={{color: "#fff", fontWeight: 700, fontSize: 16, textAlign: "center"}}>Join us now</Text>
           </TouchableOpacity>
     </AuthContainer>

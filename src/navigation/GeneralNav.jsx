@@ -1,46 +1,27 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Onboarding from '../authentication/screens/Onboarding'
-import Register from '../authentication/screens/Register'
-import Login from '../authentication/screens/Login'
-import Welcome from '../authentication/screens/Welcome'
-import ForgotPassword from '../authentication/screens/ForgotPassword'
+import AuthNavigation from './Authentication'
+import HomeNavigation from './Home'
 
 export default function Main() {
      const NativeStack = createNativeStackNavigator()
      
      return (
           <NativeStack.Navigator
-               initialRouteName='Login'
+               initialRouteName='AuthNavigation'
                screenOptions={() => ({
                     header: () => null
                })}
           >
                <NativeStack.Screen
-                    name='Onboarding' 
-                    component={Onboarding}
+                    name='AuthNavigation' 
+                    component={AuthNavigation}
                />
 
                <NativeStack.Screen 
-                    name='Welcome'
-                    component={Welcome}
-               />
-
-               <NativeStack.Screen 
-                    name='Register' 
-                    component={Register} 
-               />
-               <NativeStack.Screen 
-                    name='Login' 
-                    component={Login} 
-               />
-               <NativeStack.Screen 
-                    name='ForgotPassword'
-                    component={ForgotPassword}
+                    name='Home'
+                    component={HomeNavigation}
                />
           </NativeStack.Navigator>
     )
 }
-
-const styles = StyleSheet.create({})

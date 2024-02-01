@@ -56,8 +56,8 @@ const AuthContainer = ({children, authRedirectionFooter}) => {
       <KeyboardAwareScrollView 
         style={[{backgroundColor: "#fff", height}]}
         resetScrollToCoords={{ x: 0, y: 0 }}
-        contentContainerStyle={{flex: 1}}
-        scrollEnabled={true}
+        contentContainerStyle={{height, flex: 1}}
+        scrollEnabled={false}
       >
         <View style={[styles.header, {height: 0.1 * height}]}>
             <Image 

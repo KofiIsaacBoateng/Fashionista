@@ -82,7 +82,7 @@ const Register = ({navigation}) => {
             onSubmitEditing={() => emailRef.current?.focus()}
           />
 
-          <CustomTextInput 
+          <CustomTextInput
             reference={emailRef}
             name="email"
             formik={formik}

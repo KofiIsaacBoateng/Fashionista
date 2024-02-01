@@ -35,5 +35,12 @@ const registerValidationSchema = yup.object().shape({
         .default(false)
 })
 
+const forgotPasswordEmailValidationSchema = yup.object().shape({
+    email: yup.string()
+        .trim()
+        .email("Invalid email format")
+        .required("Email is required!")
+})
 
-export {loginValidationSchema, registerValidationSchema}
+
+export {loginValidationSchema, registerValidationSchema, forgotPasswordEmailValidationSchema}

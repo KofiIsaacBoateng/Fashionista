@@ -35,4 +35,16 @@ const Button = ({index,  onPress}) => {
   )
 }
 
+export const AuthRedirectButton = ({label, actionLabel, onPress}) => {
+     return (
+          <TouchableOpacity
+               style={{justifyContent: "center", flexDirection: "row", gap: 10}}
+               {...{onPress}}
+          >
+               <Text style={{color: "#fff"}}>{label}</Text>
+               <Text style={{color: "green", fontWeight: 800}}>{actionLabel}</Text>
+          </TouchableOpacity>
+     )
+}
+
 export default Button

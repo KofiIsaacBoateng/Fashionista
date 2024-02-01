@@ -44,3 +44,5 @@
   - [x] Add login, forgot password, and sign up click events to navigate to their respective screens
 
 ##### Home Screen
+  - [x] Drawer navigation
+  - [ ] Initial Home Screen

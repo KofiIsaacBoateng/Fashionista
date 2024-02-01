@@ -10,7 +10,7 @@ const Welcome = () => {
     <View style={[styles.container]}>
           <View style={[styles.main]}>
                <Image
-                    source={require('../../assets/7.png')}
+                    source={require('../../../assets/7.png')}
                     style={[{
                          width: width,
                          height: ((width + 80) * 500) / width,

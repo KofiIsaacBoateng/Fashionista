@@ -98,7 +98,7 @@ const Onboarding = ({navigation}) => {
     }
   }
   )
-
+  
   const animatedOpacity = (index) => useAnimatedStyle(() => ({
     opacity: interpolate(
          scale.value,

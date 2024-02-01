@@ -1,12 +1,15 @@
-import { View, Dimensions, StyleSheet, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Dimensions, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native'
+import React, {useRef} from 'react'
 import AuthContainer from '../components/AuthContainer'
 import { CustomTextInput, CheckBox } from '../components/CustomInputs'
+import { AuthRedirectButton } from '../components/Button'
+import { useFormik } from 'formik'
+import { loginValidationSchema } from '../helpers/authSchemas'
 
-const {width} = Dimensions.get("window")
+const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
   heading: {
-    fontSize: 25,
+    fontSize: 28,
     fontWeight: "900",
     marginTop: 10,
     marginBottom: 5,
@@ -17,6 +20,8 @@ const styles = StyleSheet.create({
   intro: {
     textAlign: "center",
     color: "#555b",
+    fontSize: 12,
+    marginBottom: 15
   },
 
   bottom: {
@@ -36,39 +41,69 @@ const styles = StyleSheet.create({
 })
 
 const Login = ({navigation}) => {
+  const passwordRef = useRef(null)
+  const authRedirectionFooter = (
+    <AuthRedirectButton 
+      label="Don't have an account yet ?"
+      actionLabel="Sign up here"
+      onPress={() => navigation.navigate("Register")}
+    />
+  )
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+      persist: false
+    },
+
+    onSubmit: () => navigation.navigate("Register"),
+    validationSchema: loginValidationSchema
+  })
   return (
-    <AuthContainer>
-        <Text style={styles.heading}>Welcome Back!</Text>
-        <Text style={styles.intro}>Use your credentials to login to your account.</Text>
-        <CustomTextInput 
-          name="email"
-          id="email"
-          iconName="envelope-o"
-          label="email"
-        />
-
-        <CustomTextInput 
-          name="password"
-          id="password"
-          iconName="lock-closed-outline"
-          label="password"
-        />
-
-        <View style={styles.bottom}>
-          <CheckBox 
-            label="Remember me"
-            name="persist"
+    <AuthContainer
+      {...{authRedirectionFooter}}
+    >
+          <Text style={styles.heading}>Welcome Back!</Text>
+          <Text style={styles.intro}>Use your credentials below and login to your account.</Text>
+          <CustomTextInput
+            reference={null}
+            name="email"
+            formik={formik}
+            iconName="envelope-o"
+            label="Email"
+            returnKeyLabel="next"
+            returnKeyType="next"
+            onSubmitEditing={() => passwordRef.current?.focus()}
           />
-          <TouchableOpacity
-            onPress={() => navigation.navigate("ForgotPassword")}
-          >
-            <Text style={{textAlign: "right"}}>Forgot password?</Text>
-          </TouchableOpacity>
-        </View>
 
-        <TouchableOpacity style={styles.callToAction}>
-          <Text style={{color: "#fff", fontWeight: 700, fontSize: 16, textAlign: "center"}}>Login to your account</Text>
-        </TouchableOpacity>
+          <CustomTextInput
+            reference={passwordRef}
+            name="password"
+            formik={formik}
+            iconName="lock-closed-outline"
+            label="Password"
+            returnKeyLabel="go"
+            returnKeyType="go"
+            onSubmitEditing={() => null }
+          />
+
+          <View style={styles.bottom}>
+            <CheckBox 
+              label="Remember me"
+              name="persist"
+              formik={formik}
+            />
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ForgotPassword")}
+            >
+              <Text style={{textAlign: "right", color: "green"}}>Forgot password?</Text>
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity style={styles.callToAction}>
+            <Text style={{color: "#fff", fontWeight: 700, fontSize: 16, textAlign: "center"}}>Login to your account</Text>
+          </TouchableOpacity>
     </AuthContainer>
   )
 }

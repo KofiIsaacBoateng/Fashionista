@@ -10,6 +10,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons' // 4. clock 5. gear
 import FontAwesome from 'react-native-vector-icons/FontAwesome' // 6. logout
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import DrawerNavElement from './DrawerNavElement'
+import { StatusBar } from 'expo-status-bar'
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
 const DrawerContent = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
+        <StatusBar style="light" backgroundColor="#0c0d34" />
         <DrawerContainer>
             <View style={{flex: 1, alignItems: "center"}}>
                 <View style={[styles.profilePhoto]} />

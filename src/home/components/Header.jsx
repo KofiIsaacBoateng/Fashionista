@@ -4,16 +4,19 @@ import React from 'react'
 const {width, height} = Dimensions.get("window")
 
 const styles = StyleSheet.create({
-    header: {
-        height: height * 0.15,
-        backgroundColor: "#0c0d34",
-        borderBottomRightRadius: 75,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingTop: 10,
-        paddingHorizontal: 15
+    container: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      paddingHorizontal: 20,
+      paddingBottom: 20,
+      paddingTop: 13
     },
-
+    title: {
+      textTransform: "uppercase", 
+      fontWeight: "900", 
+      letterSpacing: 1, 
+      opacity: 0.7
+    },
     badge: {
       width: 8, 
       height: 8, 
@@ -27,11 +30,11 @@ const styles = StyleSheet.create({
     }
 })
 
-const Header = ({LeftIcon, title, RightIcon, badgeForRight}) => {
+const Header = ({LeftIcon, title, titleColor: color , RightIcon, badgeForRight}) => {
   return (
-    <View style={styles.header}>
+    <View style={[styles.container]}>
         {LeftIcon}
-        <Text style={{color: "#fff", letterSpacing: 1, opacity: 0.7}}>{title}</Text>
+        <Text style={[styles.title, {color}]}>{title}</Text>
         <View style={{}}>
           {RightIcon}
           {badgeForRight && <View style={styles.badge} />}

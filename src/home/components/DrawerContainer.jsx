@@ -3,6 +3,7 @@ import React from 'react'
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import Header from './Header'
+import { StatusBar } from 'expo-status-bar'
 
 const {height, width} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -22,6 +23,14 @@ const styles = StyleSheet.create({
         left: 0, 
         right: 0,
         bottom: 250
+    },
+
+    header: {
+        width: "100%",
+        height: height * 0.15,
+        backgroundColor: "#0c0d34",
+        borderBottomRightRadius: 75,
+        overflow: "hidden"
     },
 
     underlayBottom: {
@@ -52,12 +61,22 @@ const DrawerContainer = ({children}) => {
 
   return (
     <View style={styles.container}>
-        <Header  
-            LeftIcon = {<AntDesign name="close" size={18} color="#fff" />}
-            title="my profile"
-            RightIcon = {<SimpleLineIcons name="bag" size={16} color="#fff" />}
-            badgeForRight={true}
-        />
+        <StatusBar style='light' backgroundColor='#0c0d34' />
+        <View style={styles.header}>
+            <View style={{...StyleSheet.absoluteFillObject, backgroundColor: "#0c0d34"}} />
+            <Header  
+                LeftIcon = {<AntDesign name="close" size={18} color="#fff" />}
+                title="MENU"
+                titleColor={"#fff"}
+                RightIcon = {<SimpleLineIcons name="bag" size={16} color="#fff" />}
+                badgeForRight={true}
+            />
+            {/* <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+                <Text>1</Text>
+                <Text>2</Text>
+                <Text>3</Text>
+            </View> */}
+        </View>
         <View style={[styles.content]}>
             <View style={[styles.underlayTop]} />
             <View style={[styles.underlayBottom]}>

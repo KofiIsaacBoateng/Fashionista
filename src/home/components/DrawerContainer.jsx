@@ -55,7 +55,8 @@ const DrawerContainer = ({children}) => {
         <Header  
             LeftIcon = {<AntDesign name="close" size={18} color="#fff" />}
             title="my profile"
-            RightIcon = {<SimpleLineIcons name="basket" size={16} color="#fff" />}
+            RightIcon = {<SimpleLineIcons name="bag" size={16} color="#fff" />}
+            badgeForRight={true}
         />
         <View style={[styles.content]}>
             <View style={[styles.underlayTop]} />

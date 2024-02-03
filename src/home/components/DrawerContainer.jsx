@@ -2,22 +2,13 @@ import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
+import Header from './Header'
 
 const {height, width} = Dimensions.get("window")
 const styles = StyleSheet.create({
     container: {
         flex: 1,
     }, 
-
-    header: {
-        height: height * 0.15,
-        backgroundColor: "#0c0d34",
-        borderBottomRightRadius: 75,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingTop: 10,
-        paddingHorizontal: 15
-    },
 
     content: {
         height: height * 0.73,
@@ -58,13 +49,14 @@ const styles = StyleSheet.create({
 })
 
 const DrawerContainer = ({children}) => {
+
   return (
     <View style={styles.container}>
-        <View style={styles.header}>
-            <AntDesign name="close" size={18} color="#fff" />
-            <Text style={{color: "#fff", letterSpacing: 1, opacity: 0.7}}>my profile</Text>
-            <SimpleLineIcons name="basket" size={16} color="#fff" />
-        </View>
+        <Header  
+            LeftIcon = {<AntDesign name="close" size={18} color="#fff" />}
+            title="my profile"
+            RightIcon = {<SimpleLineIcons name="basket" size={16} color="#fff" />}
+        />
         <View style={[styles.content]}>
             <View style={[styles.underlayTop]} />
             <View style={[styles.underlayBottom]}>

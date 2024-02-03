@@ -3,7 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-import FooterSocialLogins from './Footer'
+// import FooterSocialLogins from './Footer'
 
 const {width, height} = Dimensions.get('window')
 const styles = StyleSheet.create({
@@ -78,8 +78,9 @@ const AuthContainer = ({children, authRedirectionFooter}) => {
         </View>
         <View style={{height: 0.2 * height}}>
           <View style={[styles.underlay, {backgroundColor: "#0c0d34"}]} />
-          <FooterSocialLogins />
-          {authRedirectionFooter}
+          <View style={{width, alignItems: "center"}}>
+            {authRedirectionFooter}
+          </View>
         </View>
       </KeyboardAwareScrollView>
     </SafeAreaView>

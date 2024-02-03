@@ -6,6 +6,7 @@ import { AuthRedirectButton } from '../components/Button'
 import { useFormik } from 'formik'
 import { loginValidationSchema } from '../helpers/authSchemas'
 import { StatusBar } from 'expo-status-bar'
+import FooterSocialLogins from '../components/Footer'
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -44,11 +45,14 @@ const styles = StyleSheet.create({
 const Login = ({navigation}) => {
   const passwordRef = useRef(null)
   const authRedirectionFooter = (
-    <AuthRedirectButton 
-      label="Don't have an account yet ?"
-      actionLabel="Sign up here"
-      onPress={() => navigation.navigate("Register")}
-    />
+    <View style={{ width}}>
+      <FooterSocialLogins />
+      <AuthRedirectButton 
+        label="Don't have an account yet ?"
+        actionLabel="Sign up here"
+        onPress={() => navigation.navigate("Register")}
+      />
+    </View>
   )
 
   const formik = useFormik({

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
 
 })
 
-const SuccessState = ({displayMessage, activityMessage}) => {
+const SuccessState = ({displayMessage, activityMessage, setSending}) => {
     const navigation = useNavigation()
   return (
     <View style={styles.container}>
@@ -52,12 +52,6 @@ const SuccessState = ({displayMessage, activityMessage}) => {
             <Ionicons name="checkmark" size={35} color="#fff" />
         </View>
         <Text style={styles.msg}>{activityMessage}</Text>
-        <TouchableOpacity
-            style={[styles.callToAction, {backgroundColor: "green"}]}
-            onPress={() => navigation.navigate("Login")}
-        >
-            <Text style={{textAlign: "center", color: "#fff", fontSize: 18, fontWeight: "800" }}>Go back to login</Text>
-        </TouchableOpacity>
     </View>
   )
 }
@@ -70,15 +64,6 @@ const FailedState = ({displayMessage, activityMessage, setSending, reset}) => {
             <AntDesign name="close" size={40} color="#fff" />
         </View>
         <Text style={styles.msg}>{activityMessage}</Text>
-        <TouchableOpacity
-            style={[styles.callToAction, {backgroundColor: "firebrick"}]}
-            onPress={() => {
-                setSending(prev => false)
-                reset()
-            }}
-        >
-            <Text style={{textAlign: "center", color: "#fff", fontSize: 18, fontWeight: "800" }}>Go back</Text>
-        </TouchableOpacity>
       </View>
     )
   }

@@ -6,6 +6,8 @@ import { useFormik } from 'formik'
 import { forgotPasswordEmailValidationSchema } from '../helpers/authSchemas'
 import { CustomTextInput } from '../components/CustomInputs'
 import { FailedState, SuccessState } from '../components/forgotPasswordSuccessState'
+import { StatusBar } from 'expo-status-bar'
+import Ionicons from "react-native-vector-icons/Ionicons"
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -28,17 +30,35 @@ const styles = StyleSheet.create({
       width: width * 0.8,
       backgroundColor: "green",
       borderRadius: 100
+    },
+    
+    footer: {
+      backgroundColor: "#fff", 
+      width: 70, 
+      height: 70, 
+      margin: "auto", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      borderRadius: 50, 
+      marginTop: 25
     }
 })
+
+const Close = ({navigation}) => {
+  return (
+    <TouchableOpacity
+      style={styles.footer}
+      onPress={() => navigation.navigate("Login")}
+    >
+      <Ionicons name="close" size={28} color="#0c0d34" />
+    </TouchableOpacity>
+  )
+}
 
 const ForgotPassword = ({navigation}) => {
     const [sending, setSending] = useState(false)
     const authRedirectionFooter = (
-      <AuthRedirectButton 
-        label="Don't have an account yet ?"
-        actionLabel="Sign up here"
-        onPress={() => navigation.navigate("Register")}
-      />
+        <Close navigation={navigation} />
     )
 
     const formik = useFormik({
@@ -57,6 +77,7 @@ const ForgotPassword = ({navigation}) => {
     <AuthContainer
       {...{authRedirectionFooter}}
     >
+      <StatusBar style='light' backgroundColor="#0c0d34" />
     {!sending &&
       <>
           <Text style={[styles.heading]}>We got you!</Text>
@@ -78,9 +99,7 @@ const ForgotPassword = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.callToAction}
-            onPress={() => {
-              setTimeout(() => setSending(prev => true), 500)
-            }}
+            onPress={formik.handleSubmit}
           >
             <Text style={{textAlign: "center", color: "#fff", fontSize: 16, textTransform: "capitalize"}}>Send </Text>
           </TouchableOpacity>

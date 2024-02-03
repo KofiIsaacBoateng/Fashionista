@@ -5,6 +5,7 @@ import { AuthRedirectButton } from '../components/Button'
 import { CustomTextInput, CheckBox } from '../components/CustomInputs'
 import { useFormik } from 'formik'
 import { registerValidationSchema } from '../helpers/authSchemas'
+import FooterSocialLogins from '../components/Footer'
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -45,11 +46,14 @@ const Register = ({navigation}) => {
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
   const authRedirectionFooter = (
-    <AuthRedirectButton 
-      label="Already have an account ? "
-      actionLabel="Login here"
-      onPress={() => navigation.navigate("Login")}
-    />
+    <View style={{width}}>
+      <FooterSocialLogins />
+      <AuthRedirectButton 
+        label="Already have an account ? "
+        actionLabel="Login here"
+        onPress={() => navigation.navigate("Login")}
+      />
+    </View>
   )
   const formik = useFormik({
     initialValues: {

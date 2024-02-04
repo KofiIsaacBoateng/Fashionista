@@ -11,6 +11,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome' // 6. logout
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import DrawerNavElement from './DrawerNavElement'
 import { StatusBar } from 'expo-status-bar'
+import { useNavigation } from '@react-navigation/native'
 
 const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
 })
 
 const DrawerContent = () => {
+    const navigation = useNavigation()
   return (
     <SafeAreaView style={{flex: 1}}>
         <StatusBar style="light" backgroundColor="#0c0d34" />
@@ -61,7 +63,7 @@ const DrawerContent = () => {
                     <DrawerNavElement 
                         label="Outfit Ideas"
                         color="#45ae76"
-                        action={() => null}
+                        action={() => navigation.navigate("OutfitIdeas")}
                         icon={<MaterialCommunityIcons name="lightning-bolt" size={25} color="white" />}
                     />
 
@@ -69,14 +71,14 @@ const DrawerContent = () => {
                         label="Favorite Outfits"
                         count={34}
                         color="firebrick"
-                        action={() => null}
+                        action={() => navigation.navigate("FavoriteOutfits")}
                         icon={<Foundation name="heart" size={20} color="white" />}
                     />
 
                     <DrawerNavElement 
                         label="Edit Profile"
                         color="orangered"
-                        action={() => null}
+                        action={() => navigation.navigate("EditProfile")}
                         icon={<Ionicons name="person" size={19} color="white" />}
                     />
 
@@ -91,14 +93,14 @@ const DrawerContent = () => {
                     <DrawerNavElement 
                         label="Notification Settings"
                         color="blue"
-                        action={() => null}
+                        action={() => navigation.navigate("NotificationSettings")}
                         icon={<FontAwesome name="gear" size={20} color="white" />}
                     />
 
                     <DrawerNavElement 
                         label="Logout"
                         color="black"
-                        action={() => null}
+                        action={() => alert("Are sure you want to logout?")}
                         icon={<Ionicons name="arrow-undo" size={17} color="white" />}
                     />
             </View>

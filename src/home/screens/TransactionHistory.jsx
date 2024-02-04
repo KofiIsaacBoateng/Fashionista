@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Screen2 = () => {
+const TransactionHistory = () => {
   return (
     <View>
-      <Text>Screen2</Text>
+      <Text>TransactionHistory</Text>
     </View>
   )
 }
 
-export default Screen2
+export default TransactionHistory
 
 const styles = StyleSheet.create({})

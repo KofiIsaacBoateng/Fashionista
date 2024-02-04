@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Screen4 = () => {
+const EditProfile = () => {
   return (
     <View>
-      <Text>Screen4</Text>
+      <Text>EditProfile</Text>
     </View>
   )
 }
 
-export default Screen4
+export default EditProfile
 
 const styles = StyleSheet.create({})

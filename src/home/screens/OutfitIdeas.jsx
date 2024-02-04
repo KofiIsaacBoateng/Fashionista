@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -95,16 +95,27 @@ const OutfitIdeas = ({navigation}) => {
       </View>
       <View style={[{height: height * 0.15, justifyContent: "center"}]}>
         <View style={styles.footer}>
-          <FontAwesome5 size={24} name="long-arrow-alt-left" color="#0c0d34" />
-          <View style={{borderWidth: 2, borderColor: "#0c0d34", width: 17, height: 17, borderRadius: 5, backgroundColor: "#fff"}}>
+          <TouchableOpacity
+            onPress={() => null}
+          >
+            <FontAwesome5 size={24} name="long-arrow-alt-left" color="#0c0d34" />
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={{borderWidth: 2, borderColor: "#0c0d34", width: 17, height: 17, borderRadius: 5, backgroundColor: "#fff"}}
+            onPress={() => null}
+          >
             <FontAwesome5 
               size={24} 
               name="long-arrow-alt-up" 
               color="#0c0d34" 
               style={{transform: [{rotate: "45deg"}], position: "absolute", top: "-100%", right: "-50%", }}
             />
-          </View>
-          <FontAwesome5 size={24} name="long-arrow-alt-right" color="#0c0d34" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => null}
+          >
+            <FontAwesome5 size={24} name="long-arrow-alt-right" color="#0c0d34" />
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

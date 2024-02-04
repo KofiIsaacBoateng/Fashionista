@@ -1,9 +1,10 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons"
 import AntDesign from "react-native-vector-icons/AntDesign"
 import Header from './Header'
 import { StatusBar } from 'expo-status-bar'
+import { DrawerActions, useNavigation } from '@react-navigation/native'
 
 const {height, width} = Dimensions.get("window")
 const styles = StyleSheet.create({
@@ -58,6 +59,22 @@ const styles = StyleSheet.create({
 })
 
 const DrawerContainer = ({children}) => {
+    const navigation = useNavigation()
+    const closeBtn = (
+        <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.closeDrawer())}
+        >
+            <AntDesign name="close" size={18} color="#fff" />
+        </TouchableOpacity>
+    )
+
+    const cartBtn = (
+        <TouchableOpacity
+            onPress={() => null}
+        >
+            <SimpleLineIcons name="bag" size={16} color="#fff" />
+        </TouchableOpacity>
+    )
 
   return (
     <View style={styles.container}>
@@ -65,10 +82,10 @@ const DrawerContainer = ({children}) => {
         <View style={styles.header}>
             <View style={{...StyleSheet.absoluteFillObject, backgroundColor: "#0c0d34"}} />
             <Header  
-                LeftIcon = {<AntDesign name="close" size={18} color="#fff" />}
+                LeftIcon = {closeBtn}
                 title="MENU"
                 titleColor={"#fff"}
-                RightIcon = {<SimpleLineIcons name="bag" size={16} color="#fff" />}
+                RightIcon = {cartBtn}
                 badgeForRight={true}
             />
             {/* <View style={{flexDirection: "row", justifyContent: "space-between"}}>

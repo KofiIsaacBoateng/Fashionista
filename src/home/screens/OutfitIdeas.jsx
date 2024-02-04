@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -44,7 +44,21 @@ const styles = StyleSheet.create({
 
 
 
-const OutfitIdeas = () => {
+const OutfitIdeas = ({navigation}) => {
+  const menuBtn = (
+    <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <Ionicons name="menu" size={22} color="#0c0d34" />
+    </TouchableOpacity>
+  )
+  
+  const cartBtn = (
+    <TouchableOpacity
+        onPress={() => null}
+    >
+        <SimpleLineIcons name="bag" size={16} color="#0c0d34" />
+    </TouchableOpacity>
+)
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: "#fff"}}>
       <StatusBar style='dark' backgroundColor='#fff' />
@@ -53,10 +67,10 @@ const OutfitIdeas = () => {
       </View>
       {/***   CONTENT  ***/}
       <Header 
-        LeftIcon={<Ionicons name="menu" size={22} color="#0c0d34" />}
+        LeftIcon={menuBtn}
         title={"Outfit Ideas"}
         titleColor={"#0c0d34"}
-        RightIcon={<SimpleLineIcons name="bag" size={18} color="#0c0d34" />}
+        RightIcon={cartBtn}
         badgeForRight={true}
       />
       <ScrollView

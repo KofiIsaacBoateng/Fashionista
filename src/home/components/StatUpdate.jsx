@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const styles = StyleSheet.create({
     container: {
@@ -22,10 +23,13 @@ const styles = StyleSheet.create({
 
 const StatUpdate = ({backgroundColor, title}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      style={styles.container}
+      onPress={() => null}
+    >
       <View style={[styles.blob, {backgroundColor}]} />
       <Text style={styles.title}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 

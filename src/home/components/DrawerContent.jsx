@@ -86,7 +86,7 @@ const DrawerContent = () => {
                         label="Transaction History"
                         count={12}
                         color="#c12783"
-                        action={() => null}
+                        action={() => navigation.navigate("TransactionHistory")}
                         icon={<AntDesign name="clockcircle" size={18} color="white" />}
                     />
 

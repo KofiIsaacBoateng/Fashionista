@@ -52,12 +52,12 @@
 
 
 ##### ForgotPassword
-  - [ ] Background Pattern Design
-  - [ ] Email Input with Verification
-  - [ ] Call to Action
-  - [ ] Close Button to Go back to Login
-  - [ ] Request Success Indicator
-  - [ ] Request Fail Indicator
+  - [x] Background Pattern Design
+  - [x] Email Input with Verification
+  - [x] Call to Action
+  - [x] Close Button to Go back to Login
+  - [x] Request Success Indicator
+  - [x] Request Fail Indicator
 
 ##### Home Screen
   - [x] Drawer navigation

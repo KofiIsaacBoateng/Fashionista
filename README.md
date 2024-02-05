@@ -39,7 +39,7 @@
   - [x] Success confirmation modal
   - [x] Error confirmation modal
 
-##### Signup Screen
+##### Register Screen
   - [x] Add patterns to top and bottom
   - [x] Add an underlay for each pattern
   - [x] Add an overlay
@@ -50,6 +50,15 @@
   - [x] Add other sign in options to the screen's footer
   - [x] Add login, forgot password, and sign up click events to navigate to their respective screens
 
+
+##### ForgotPassword
+  - [ ] Background Pattern Design
+  - [ ] Email Input with Verification
+  - [ ] Call to Action
+  - [ ] Close Button to Go back to Login
+  - [ ] Request Success Indicator
+  - [ ] Request Fail Indicator
+
 ##### Home Screen
   - [x] Drawer navigation
-  - [ ] Initial Home Screen
+  - [x] Initial Home Screen

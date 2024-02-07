@@ -10,13 +10,10 @@ const Welcome = () => {
     <View style={[styles.container]}>
           <View style={[styles.main]}>
                <Image
-                    source={require('../../../assets/7.png')}
+                    source={require('../../../assets/onb-05.jpg')}
                     style={[{
                          width: width,
-                         height: ((width + 80) * 500) / width,
-                         transform: [
-                              {translateY: 50}
-                         ],
+                         height: "100%"
                     }]}
                />
           </View>
@@ -24,7 +21,7 @@ const Welcome = () => {
                <View style={styles.back}/>
                <View style={styles.front}>
                     <Text style={styles.title}>Let's get started</Text>
-                    <Text style={styles.subTitle}>Login to your account below or signup for an amazing experience</Text>
+                    <Text style={styles.subTitle}>Login to your account below or sign up for an amazing experience</Text>
                     <TouchableOpacity 
                          onPress={() => navigation.navigate('Login')}
                     >
@@ -45,7 +42,7 @@ const Welcome = () => {
                               styles.button, 
                               {backgroundColor: '#aaa3'}
                          ]}>
-                              <Text style={[styles.label, {color: '#222'}]}>
+                              <Text style={[styles.label, {color: '#fff', fontWeight:"900"}]}>
                                    Join us, it's free.
                               </Text>
                          </View>
@@ -57,7 +54,7 @@ const Welcome = () => {
                          <View style={[
                               styles.button, 
                          ]}>
-                              <Text style={[styles.label, {color: '#222'}]}>
+                              <Text style={[styles.label, {color: '#0c0d34', fontWeight: "900"}]}>
                                    Forgot password?
                               </Text>
                          </View>
@@ -108,9 +105,9 @@ const styles = StyleSheet.create({
      title: {
           textAlign: 'center',
           fontSize: 22,
-          fontWeight: '700',
           marginBottom: 15,
-          color: '#0c0d34'
+          color: '#0c0d34',
+          fontWeight: "900"
      
      },
      subTitle: {
@@ -118,7 +115,8 @@ const styles = StyleSheet.create({
           fontSize: 15, 
           fontWeight: '500',
           lineHeight: 20,
-          marginBottom: 15
+          marginBottom: 15,
+          color: "#0c0d34cc"
      },
 
      button: {

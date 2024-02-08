@@ -11,7 +11,7 @@ const Welcome = () => {
     <View style={[styles.container]}>
           <View style={[styles.main]}>
                <Image
-                    source={require('../../../assets/onb-05.jpg')}
+                    source={require('../../../assets/7.png')}
                     style={[{
                          width: width,
                          height: "100%"

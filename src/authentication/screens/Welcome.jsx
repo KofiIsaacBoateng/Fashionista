@@ -6,6 +6,7 @@ const {width, height} = Dimensions.get('window')
 
 const Welcome = () => {
      const navigation = useNavigation()
+     
   return (
     <View style={[styles.container]}>
           <View style={[styles.main]}>
